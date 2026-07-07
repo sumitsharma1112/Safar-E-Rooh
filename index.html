@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safar-e-Rooh &mdash; Do Dilon Ka Ek Safar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@400;500;600;700&family=Cormorant+SC:wght@500;600&display=swap');
+
+  :root{
+    --paper: #f2ead9;
+    --paper-2: #ece2cb;
+    --ink: #2b2118;
+    --ink-soft: #4a3d2e;
+    --rule: #b79b6b;
+    --accent: #8a2e1f;
+    --gold: #9c7a34;
+    --shadow: rgba(43,33,24,0.18);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background: var(--paper-2);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+
+  .hi{ font-family: 'Tiro Devanagari Hindi', 'Hind', serif; }
+
+  .page{
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 0 60px var(--shadow);
+    min-height: 100vh;
+  }
+
+  /* ---------- HERO / COVER ---------- */
+  .hero{
+    position:relative;
+    text-align:center;
+    padding: 90px 24px 70px;
+    background: linear-gradient(180deg, #1b140d 0%, #2b2118 100%);
+    border-bottom: 3px double var(--gold);
+  }
+  .hero .eyebrow{
+    font-family:'Cormorant SC', serif;
+    letter-spacing: 0.32em;
+    font-size: 13px;
+    color: #d9b46a;
+    text-transform: uppercase;
+    margin: 0 0 22px;
+  }
+  .hero .eyebrow.hi{
+    font-family: 'Tiro Devanagari Hindi', serif;
+    letter-spacing: 0.06em;
+  }
+  .hero h1{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size: 52px;
+    margin: 0 0 6px;
+    color: #f2ead9;
+    letter-spacing: 0.01em;
+  }
+  .hero h1 .hi-title{
+    display:block;
+    font-family:'Tiro Devanagari Hindi', serif;
+    font-size: 46px;
+    color: #d9b46a;
+    margin-top: 10px;
+  }
+  .hero h2{
+    font-family:'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 21px;
+    color: #cbb98a;
+    margin: 18px 0 4px;
+  }
+  .hero .tag{
+    margin-top: 22px;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    color: #a8987a;
+    max-width: 480px;
+    margin-inline: auto;
+    line-height: 1.7;
+  }
+
+  /* ---------- LANGUAGE CHOICE ---------- */
+  .choice{
+    padding: 70px 40px 90px;
+    text-align: center;
+  }
+  .choice > .prompt{
+    font-family:'Cormorant SC', serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 44px;
+  }
+  .cards{
+    display:flex;
+    gap: 28px;
+    justify-content:center;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .card{
+    flex: 1 1 260px;
+    max-width: 300px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 36px 26px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .card:hover{
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 24px var(--shadow);
+  }
+  .card .flag{
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family:'Cormorant SC', serif;
+    margin-bottom: 18px;
+  }
+  .card .lang-title{
+    font-family:'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .card .lang-title.hi{
+    font-family:'Tiro Devanagari Hindi', serif;
+    font-size: 28px;
+  }
+  .card .lang-sub{
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+  .card .lang-sub.hi{
+    font-family:'Tiro Devanagari Hindi', serif;
+    font-style: normal;
+  }
+  .card .btn{
+    margin-top: auto;
+    display:inline-block;
+    padding: 10px 26px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'EB Garamond', serif;
+  }
+  .card .btn.hi{ font-family:'Tiro Devanagari Hindi', serif; letter-spacing:0.03em; text-transform:none; font-size: 16px; }
+  .card:hover .btn{
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  .divider-row{
+    text-align:center;
+    color: var(--rule);
+    font-size: 20px;
+    margin: 46px 0 0;
+    letter-spacing: 0.5em;
+  }
+
+  footer{
+    text-align:center;
+    padding: 40px 24px 60px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule);
+  }
+  footer a{ color: var(--accent); text-decoration: none; }
+  footer a:hover{ text-decoration: underline; }
+
+  @media (max-width: 640px){
+    .hero{ padding: 60px 20px 50px; }
+    .hero h1{ font-size: 36px; }
+    .hero h1 .hi-title{ font-size: 32px; }
+    .choice{ padding: 50px 20px 60px; }
+    .cards{ gap: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <p class="eyebrow">A Novel</p>
+    <p class="eyebrow hi">एक उपन्यास</p>
+    <h1>Safar-e-Rooh
+      <span class="hi-title">सफ़र-ए-रूह</span>
+    </h1>
+    <h2>Do Dilon Ka Ek Safar &nbsp;&middot;&nbsp; <span class="hi">दो दिलों का एक सफ़र</span></h2>
+    <p class="tag">A love story that crosses the borders of 1947 &mdash; and of time itself.<br>
+    <span class="hi">1947 की सरहदों के आर-पार, समय से परे एक प्रेम-कहानी।</span></p>
+  </div>
+
+  <div class="choice">
+    <p class="prompt">Choose Your Language &nbsp;&middot;&nbsp; <span class="hi">भाषा चुनें</span></p>
+    <div class="cards">
+      <a class="card" href="safar-e-rooh-en.html">
+        <span class="flag">English</span>
+        <span class="lang-title">Read in English</span>
+        <span class="lang-sub">The full novel, cover to cover</span>
+        <span class="btn">Begin Reading &rarr;</span>
+      </a>
+      <a class="card" href="safar-e-rooh-hi.html">
+        <span class="flag hi">हिंदी</span>
+        <span class="lang-title hi">हिंदी में पढ़ें</span>
+        <span class="lang-sub hi">पूरा उपन्यास, आरंभ से अंत तक</span>
+        <span class="btn hi">पढ़ना शुरू करें &rarr;</span>
+      </a>
+    </div>
+    <p class="divider-row">&#10087;</p>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> Safar-e-Rooh &nbsp;&middot;&nbsp; All rights reserved.
+  </footer>
+
+</div>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
